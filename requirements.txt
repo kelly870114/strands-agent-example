@@ -4,8 +4,10 @@ nova-act
 opensearch-py
 pandas
 retrying
+strands
 strands-agents 
 strands-agents-tools[mem0_memory]
 streamlit
 tqdm
 uv
+nest-asyncio

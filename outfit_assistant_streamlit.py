@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Ginny 智能穿搭助手
+Strands Agent 穿搭助手
 """
 
 import streamlit as st
@@ -26,7 +26,7 @@ st.set_page_config(
 )
 
 # Configuration
-os.environ['MEM0_API_KEY'] = "m0-693k1uwu3Rw91lovj7XH4EUMoX8Mxb5oOkDmIV0L"
+os.environ['MEM0_API_KEY'] = "m0-PXI58P7ufoqz61gK0a9V5XRc27PL9d8fAtDN543c"
 USER_ID = os.getenv('USER_ID', 'current_user')
 OPENWEATHER_API_KEY = os.getenv('OPENWEATHER_API_KEY', '3480001331df3fbca9041cfd3a18cbe3')
 
@@ -134,7 +134,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # 主標題
-st.markdown('<h1 class="main-header"> Strands Agent 智能穿搭助手 </h1>', unsafe_allow_html=True)
+st.markdown('<h1 class="main-header"> Strands Agent 穿搭助手 </h1>', unsafe_allow_html=True)
 
 # 初始化對話歷史和工具調用歷史
 if "messages" not in st.session_state:
