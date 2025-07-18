@@ -49,9 +49,19 @@ from strands import Agent
 from strands_tools import http_request, mem0_memory
 
 # Configuration - 設定 Mem0 API Key 和用戶 ID
-os.environ['MEM0_API_KEY'] = "m0-693k1uwu3Rw91lovj7XH4EUMoX8Mxb5oOkDmIV0L"
+MEM0_API_KEY = os.getenv('MEM0_API_KEY')
 USER_ID = os.getenv('USER_ID', 'current_user')  # 改為與 Mem0 後台一致
-OPENWEATHER_API_KEY = os.getenv('OPENWEATHER_API_KEY', '3480001331df3fbca9041cfd3a18cbe3')  # 直接設定你的 API key
+OPENWEATHER_API_KEY = os.getenv('OPENWEATHER_API_KEY')
+
+# 檢查必要的 API Keys
+if not MEM0_API_KEY:
+    print("⚠️  警告：MEM0_API_KEY 環境變數未設定，記憶功能可能無法正常運作")
+if not OPENWEATHER_API_KEY:
+    print("⚠️  警告：OPENWEATHER_API_KEY 環境變數未設定，天氣功能將無法使用")
+
+# 設定 Mem0 環境變數（如果有的話）
+if MEM0_API_KEY:
+    os.environ['MEM0_API_KEY'] = MEM0_API_KEY
 
 # Professional fashion consultant system prompt
 OUTFIT_CONSULTANT_PROMPT = f"""
